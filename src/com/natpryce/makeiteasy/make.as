@@ -1,0 +1,5 @@
+package com.natpryce.makeiteasy {
+public function make(maker:Maker):* {
+    return maker.make();
+}
+}
