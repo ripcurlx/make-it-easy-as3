@@ -8,7 +8,7 @@ import flash.utils.Dictionary;
  */
 public class Maker implements PropertyLookup {
     private var instantiator:Instantiator;
-    private var values:Dictionary;
+    private var values:Dictionary = newDictionary();
 
     /**
      * Creates a Maker for objects of a given type with a given initial state.
@@ -22,21 +22,23 @@ public class Maker implements PropertyLookup {
 
         if (args[0] is Instantiator) {
             this.instantiator = args[0];
-            this.values = new Dictionary();
             setPropertyValues(propertyValues);
 
-        } else if (args[1] is Maker) {
+        } else if (args[0] is Maker) {
             var that:Maker = (args[0] as Maker);
             this.instantiator = that.instantiator;
-            this.values = new Dictionary();
             setPropertyValues(that.values);
             setPropertyValues(propertyValues);
         }
     }
 
+    private static function newDictionary() : Dictionary {
+        return new Dictionary();
+    }
+
     private function setPropertyValues(propertyValues:Object):void {
         for each (var propertyValue:PropertyValue in propertyValues) {
-            values[propertyValue.property] = propertyValue.value;
+            values[propertyValue.property] = propertyValue;
         }
     }
 
@@ -66,7 +68,7 @@ public class Maker implements PropertyLookup {
 
     public function valueOf(property:Property, defaultValue:*):* {
         if (values[property] != null) {
-            return values[property];
+            return (values[property] as PropertyValue).value;
         }
         else {
             return defaultValue;

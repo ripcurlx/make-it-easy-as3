@@ -1,11 +1,21 @@
 package com.natpryce.makeiteasy {
-public class PropertyValue {
-    public var property:Property;
-    public var value:*;
 
-    public function PropertyValue(property:Property, value:*) {
-        this.property = property;
-        this.value = value;
-    }
+/**
+ * The value of a property.
+ *
+ * @author Christoph Atteneder (original java implementation by Nat Pryce)
+ */
+public interface PropertyValue {
+
+    /**
+     * The property
+     */
+    function get property():Property;
+
+    /**
+     * The property's value
+     */
+    function get value():*;
+   
 }
 }
