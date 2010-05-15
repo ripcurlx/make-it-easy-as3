@@ -6,6 +6,6 @@ package com.natpryce.makeiteasy {
  * @author Christoph Atteneder (original java implementation by Nat Pryce)
  */
 public interface PropertyLookup {
-    function valueOf(property:Property, defaultValue:*):*;
+    function valueOf(property : Property, defaultValue : *) : *;
 }
 }

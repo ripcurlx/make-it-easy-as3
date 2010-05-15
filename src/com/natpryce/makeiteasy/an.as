@@ -5,7 +5,7 @@ package com.natpryce.makeiteasy {
  *
  * @author Christoph Atteneder (original java implementation by Nat Pryce)
  */
-public function an(instantiator:Instantiator, ... propertyProviders):Maker{
+public function an(instantiator : Instantiator, ... propertyProviders) : Maker {
     return new Maker(instantiator, propertyProviders);
 }
 }

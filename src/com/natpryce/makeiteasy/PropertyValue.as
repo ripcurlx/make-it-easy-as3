@@ -10,12 +10,12 @@ public interface PropertyValue {
     /**
      * The property
      */
-    function get property():Property;
+    function get property() : Property;
 
     /**
      * The property's value
      */
-    function get value():*;
-   
+    function get value() : *;
+
 }
 }

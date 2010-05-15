@@ -7,8 +7,9 @@ import flash.utils.Dictionary;
  * @author Christoph Atteneder (original java implementation by Nat Pryce)
  */
 public class Maker implements PropertyLookup {
-    private var instantiator:Instantiator;
-    private var values:Dictionary = newDictionary();
+
+    private var instantiator : Instantiator;
+    private var values : Dictionary = newDictionary();
 
     /**
      * Creates a Maker for objects of a given type with a given initial state.
@@ -18,14 +19,14 @@ public class Maker implements PropertyLookup {
      */
     public function Maker(...args) {
 
-        var propertyValues:Array = args[1];
+        var propertyValues : Array = args[1];
 
         if (args[0] is Instantiator) {
             this.instantiator = args[0];
             setPropertyValues(propertyValues);
 
         } else if (args[0] is Maker) {
-            var that:Maker = (args[0] as Maker);
+            var that : Maker = (args[0] as Maker);
             this.instantiator = that.instantiator;
             setPropertyValues(that.values);
             setPropertyValues(propertyValues);
@@ -36,8 +37,8 @@ public class Maker implements PropertyLookup {
         return new Dictionary();
     }
 
-    private function setPropertyValues(propertyValues:Object):void {
-        for each (var propertyValue:PropertyValue in propertyValues) {
+    private function setPropertyValues(propertyValues : Object) : void {
+        for each (var propertyValue : PropertyValue in propertyValues) {
             values[propertyValue.property] = propertyValue;
         }
     }
@@ -51,7 +52,7 @@ public class Maker implements PropertyLookup {
      *
      * @return a new object
      */
-    public function make():* {
+    public function make() : * {
         return instantiator.instantiate(this);
     }
 
@@ -62,11 +63,11 @@ public class Maker implements PropertyLookup {
      * @param propertyValues those initial properties of the new Make that will differ from this Maker
      * @return a new Maker
      */
-    public function but(... propertyValues):Maker {
+    public function but(... propertyValues) : Maker {
         return new Maker(this, propertyValues);
     }
 
-    public function valueOf(property:Property, defaultValue:*):* {
+    public function valueOf(property : Property, defaultValue : *) : * {
         if (values[property] != null) {
             return (values[property] as PropertyValue).value;
         }

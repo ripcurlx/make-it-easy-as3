@@ -6,21 +6,21 @@ package com.natpryce.makeiteasy {
  * @author Christoph Atteneder (original java implementation by Nat Pryce)
  */
 
-public class SharedPropertyValue implements PropertyValue{
+public class SharedPropertyValue implements PropertyValue {
 
-    private var _property:Property;
+    private var _property : Property;
     private var _value : *;
 
-    public function SharedPropertyValue(property:Property, value:*) {
+    public function SharedPropertyValue(property : Property, value : *) {
         _property = property;
         _value = value;
     }
 
-    public function get property():Property {
+    public function get property() : Property {
         return _property;
     }
 
-    public function get value():* {
+    public function get value() : * {
         return _value;
     }
 }

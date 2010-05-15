@@ -5,7 +5,7 @@ package com.natpryce.makeiteasy {
  *
  * @author Christoph Atteneder (original java implementation by Nat Pryce)
  */
-public function make(maker:Maker):* {
+public function make(maker : Maker) : * {
     return maker.make();
 }
 }
