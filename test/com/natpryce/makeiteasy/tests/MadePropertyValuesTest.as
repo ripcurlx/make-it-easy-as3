@@ -7,7 +7,6 @@ import com.natpryce.makeiteasy.a;
 import com.natpryce.makeiteasy.an;
 import com.natpryce.makeiteasy.make;
 import com.natpryce.makeiteasy.withA;
-import com.natpryce.makeiteasy.withAn;
 
 import org.hamcrest.assertThat;
 import org.hamcrest.object.equalTo;
@@ -33,7 +32,7 @@ public class MadePropertyValuesTest {
     [Test]
     public function
             aDistinctPropertyValueInstanceIsUsedForEachMadeObjectWhenPropertyIsDefinedWithAMaker() : void {
-        var anIdentified : Maker = an(MyIdentified, withAn(identity, a(CanChangeName, withA(name, "original-name"))));
+        var anIdentified : Maker = an(MyIdentified, withA(identity, a(CanChangeName, withA(name, "original-name"))));
 
         var x : Identified = make(anIdentified);
         var y : Identified = make(anIdentified);

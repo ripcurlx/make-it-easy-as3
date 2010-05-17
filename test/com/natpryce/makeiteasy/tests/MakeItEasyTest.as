@@ -1,6 +1,8 @@
 package com.natpryce.makeiteasy.tests {
 import com.natpryce.makeiteasy.*;
 
+import example.fruit.makeiteasy.MakeItEasyExample;
+
 import org.hamcrest.assertThat;
 import org.hamcrest.core.isA;
 import org.hamcrest.object.equalTo;
