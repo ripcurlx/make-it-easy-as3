@@ -1,6 +1,6 @@
 A tiny framework that makes it easy to write Test Data Builders in ActionScript 3
 
-ActionScript 3 version of Java library make-it-easy (http://code.google.com/p/make-it-easy/) by Nat Pryce.
+ActionScript 3 version of the [make-it-easy Java library](http://code.google.com/p/make-it-easy/) by [Nat Pryce](http://www.natpryce.com/).
 
 *Original text by Nat Pryce (AS3 adaption by Christoph Atteneder)*
 
