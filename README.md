@@ -1,4 +1,4 @@
-A tiny framework that makes it easy to write Test Data Builders in Java
+A tiny framework that makes it easy to write Test Data Builders in ActionScript 3
 
 ActionScript 3 version of Java library make-it-easy (http://code.google.com/p/make-it-easy/) by Nat Pryce.
 
