@@ -8,7 +8,7 @@ Test Data Builders are described in the book Growing Object-Oriented Software, G
 
 **Example**
 
-Consider the following class hierarchy. This hierarchy illustrates a couple of complicating factors: there is an abstract base class and there is a property (Fruit.ripeness) that is not set via the constructor but by an operation of the Fruit class.
+Consider the following class hierarchy. This hierarchy illustrates a couple of complicating factors: there is a base class and there is a property (Fruit.ripeness) that is not set via the constructor but by an operation of the Fruit class.
 
     public class Fruit {
         private var ripeness : Number = 0.0;
